@@ -1,4 +1,5 @@
 require_relative "./../util/point"
+require_relative "./../util/util"
 
 class Piece
   def initialize(name, color, position)
