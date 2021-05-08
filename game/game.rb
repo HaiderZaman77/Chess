@@ -82,7 +82,7 @@ class Game
         end
 
       when 6
-        !@turn? showPieces(@chessBoard.getBlackCapturedPieces) : showPieces(@chessBoard.getWhiteCapturedPieces)
+        @turn? showPieces(@chessBoard.getBlackNotCapturedPieces) : showPieces(@chessBoard.getWhiteNotCapturedPieces)
 
       when 7
         @turn? showPieces(@chessBoard.getWhiteCapturedPieces) : showPieces(@chessBoard.getBlackCapturedPieces)
@@ -96,6 +96,7 @@ class Game
         print "\n\n Enter the piece's final position : "
         finalPosition = gets
         log(@chessBoard.move(@turn, currentPosition.strip!, finalPosition.strip!))
+        @turn = !@turn
       when 10
         log("Are you Sure? Opponent will be declared as winner.")
 
